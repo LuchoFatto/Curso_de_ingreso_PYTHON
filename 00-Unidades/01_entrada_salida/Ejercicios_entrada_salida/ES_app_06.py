@@ -5,13 +5,14 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Luciano
+apellido: Fattoni
 ---
 Ejercicio: entrada_salida_06
 ---
 Enunciado:
-Al presionar el botón  'Sumar', se deberán obtener los valores contenidos en las cajas de texto (txt_operador_A y txt_operador_B), transformarlos en números enteros, realizar la suma y luego mostrar el resultado de la operación utilizando el Dialog Alert. 
+Al presionar el botón  'Sumar', se deberán obtener los valores contenidos en las cajas de texto (txt_operador_A y txt_operador_B),
+transformarlos en números enteros, realizar la suma y luego mostrar el resultado de la operación utilizando el Dialog Alert. 
 Ej: "El resultado de la sumas es: 755" 
 '''
 
@@ -39,7 +40,13 @@ class App(customtkinter.CTk):
 
 
     def btn_sumar_on_click(self):
-        pass
+        numero_1 = self.txt_operador_a.get()
+        numero_2 = self.txt_operador_b.get()
+        operador_a_numero = int(numero_1)
+        operador_b_numero = int(numero_2)
+        resultado = operador_a_numero + operador_b_numero
+        resultado_txt = str(resultado)
+        alert(title= "Resultado de la suma", message= "El resultado es " + resultado_txt)
      
         
 if __name__ == "__main__":
