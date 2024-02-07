@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
         operador_a_numero = int(numero_1)
         operador_b_numero = int(numero_2)
         resultado = operador_a_numero + operador_b_numero
-        resultado_txt = str(resultado)
+        resultado_txt = str(resultado) #pasar el resultado a un str y permite poder escribir alrededor de la variable
         alert(title= "Resultado de la suma", message= "El resultado es " + resultado_txt)
      
         

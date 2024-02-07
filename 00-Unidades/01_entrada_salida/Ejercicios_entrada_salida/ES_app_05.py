@@ -44,7 +44,6 @@ class App(customtkinter.CTk):
         edad = self.txt_edad.get()
         informacion = "Usted se llama {0} y su edad es {1} años".format(nombre,edad)
         alert(title= "ejercicio 5", message= informacion)
-        #"Usted se llama " + nombre + " y su edad es " + edad + " años"
 
         
     
