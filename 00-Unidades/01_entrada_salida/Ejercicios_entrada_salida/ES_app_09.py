@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Luciano
+apellido: Fattoni
 ---
 Ejercicio: entrada_salida_09
 ---
@@ -35,8 +35,10 @@ class App(customtkinter.CTk):
     def btn_mostrar_on_click(self):
         sueldo = self.txt_sueldo.get()
         sueldo_como_numero = float(sueldo)
+
         porcentaje_incremento = 1.15
         sueldo_con_incremento = sueldo_como_numero * porcentaje_incremento
+        
         mensaje = "Su sueldo con el incremento del 15% es de {0} pesos".format(sueldo_con_incremento)
         alert(title= "Cierre paritarias", message= mensaje)
         
