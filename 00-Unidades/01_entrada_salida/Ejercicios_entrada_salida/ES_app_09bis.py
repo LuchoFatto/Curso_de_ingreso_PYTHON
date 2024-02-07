@@ -46,9 +46,9 @@ class App(customtkinter.CTk):
 
         numerado = incremento_como_nuemero + 100
         denominador = 100
-        porcentual = numerado / denominador
-        
+        porcentual = numerado / denominador        
         sueldo_final = sueldo_como_numero * porcentual
+        
         mensaje = "Su sueldo final con el incrmento del {0}% es de {1}".format(incremento,sueldo_final)
         alert(title= "Incremento de sueldo", message= mensaje)
         
