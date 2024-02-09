@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Luciano
+apellido: Fattoni
 ---
 TP: IF_Iluminacion
 ---
@@ -16,7 +16,7 @@ Todas las lámparas están  al mismo precio de $800 pesos final.
 		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
 		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
 		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
-		E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
+		E.	Si el importe final con descuento suma más de $4000  se obtiene un descuento adicional de 5%.
 '''
 
 class App(customtkinter.CTk):
@@ -43,7 +43,58 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+        precio_lampara = 800
+        precio_final = precio_lampara * cantidad
+
+        if(cantidad >= 6):
+            descuento = precio_final * 0.5
+            float(descuento)
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 5 and marca == "ArgentinaLuz"):
+            descuento = precio_final * 0.6
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 5 and not marca == "ArgentinaLuz"):
+            descuento = precio_final * 0.7
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 4 and (marca == "ArgentinaLuz" or marca == "FelipeLamparas")):
+            descuento = precio_final * 0.75
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 4 and not (marca == "ArgentinaLuz" or marca == "FelipeLamparas")):
+                descuento = precio_final * 0.8
+                mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+                alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 3 and marca == "ArgentinaLuz"):
+            descuento = precio_final * 0.85
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 3 and marca == "FelipeLamparas"):
+            descuento = precio_final * 0.9
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if(cantidad == 3 and not (marca == "FelipeLamparas" or marca == "ArgentinaLuz")):
+            descuento = precio_final * 0.95
+            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
+            alert(title= "Compra de Iluminación", message= mensaje)
+        
+        if (descuento > 4000):
+            nuevo_precio = descuento * 0.95
+            mensaje = "Se le adiciono un 5% de descuento en su compra, el precio es de {0} pesos".format(nuevo_precio)
+            alert(title= "Compra de Iluminación", message= mensaje)
+
+            
         
     
 if __name__ == "__main__":
