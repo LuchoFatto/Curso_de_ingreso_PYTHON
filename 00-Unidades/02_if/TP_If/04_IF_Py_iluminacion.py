@@ -47,55 +47,40 @@ class App(customtkinter.CTk):
         cantidad = int(self.combobox_cantidad.get())
         precio_lampara = 800
         precio_final = precio_lampara * cantidad
-
-        if(cantidad >= 6):
+        descuento = 0
+        float(descuento)
+        
+        if (cantidad >= 6):
             descuento = precio_final * 0.5
-            float(descuento)
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
         
-        if(cantidad == 5 and marca == "ArgentinaLuz"):
-            descuento = precio_final * 0.6
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
+        elif (cantidad == 5):
+            if marca == "ArgentinaLuz":
+                descuento = precio_final * 0.6         
+            else:
+                descuento = precio_final * 0.7
         
-        if(cantidad == 5 and not marca == "ArgentinaLuz"):
-            descuento = precio_final * 0.7
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
-        
-        if(cantidad == 4 and (marca == "ArgentinaLuz" or marca == "FelipeLamparas")):
-            descuento = precio_final * 0.75
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
-        
-        if(cantidad == 4 and not (marca == "ArgentinaLuz" or marca == "FelipeLamparas")):
+        elif (cantidad == 4):
+            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                descuento = precio_final * 0.75
+            else:
                 descuento = precio_final * 0.8
-                mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-                alert(title= "Compra de Iluminación", message= mensaje)
         
-        if(cantidad == 3 and marca == "ArgentinaLuz"):
-            descuento = precio_final * 0.85
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
+        elif (cantidad == 3):
+            if marca == "ArgentinaLuz":
+                descuento = precio_final * 0.85
+            elif marca == "FelipeLamparas":
+                descuento = precio_final * 0.9
+            else:
+                descuento = precio_final * 0.95
         
-        if(cantidad == 3 and marca == "FelipeLamparas"):
-            descuento = precio_final * 0.9
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
-        
-        if(cantidad == 3 and not (marca == "FelipeLamparas" or marca == "ArgentinaLuz")):
-            descuento = precio_final * 0.95
-            mensaje = "El precio final de su compra es de {0} pesos".format(descuento)
-            alert(title= "Compra de Iluminación", message= mensaje)
-        
+        mensaje = "El precio final de su compra es de {0} pesos".format(descuento)        
+        alert(title= "Compra de Iluminación", message= mensaje)
+
         if (descuento > 4000):
             nuevo_precio = descuento * 0.95
             mensaje = "Se le adiciono un 5% de descuento en su compra, el precio es de {0} pesos".format(nuevo_precio)
             alert(title= "Compra de Iluminación", message= mensaje)
-
-            
-        
+      
     
 if __name__ == "__main__":
     app = App()

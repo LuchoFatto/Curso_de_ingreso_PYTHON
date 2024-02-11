@@ -57,7 +57,34 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+        precio_base = 15000
+
+        match(estacion):
+            case "Invierno":
+                if(destino == "Bariloche"):
+                    tarifa = precio_base * 1.20
+                elif(destino == "Cataratas" or destino == "Cordoba"):
+                    tarifa = precio_base * 0.9
+                else:
+                    tarifa = precio_base * 0.8
+            case "Verano":
+                if(destino == "Bariloche"):
+                    tarifa = precio_base * 0.8
+                elif(destino == "Cataratas" or destino == "Cordoba"):
+                    tarifa = precio_base * 1.10
+                else:
+                    tarifa = precio_base * 1.20
+            case "Primavera" | "Otoño":
+                if(destino == "Bariloche" or destino == "Cataratas" or destino == "Mar del plata"):
+                    tarifa = precio_base * 1.10
+                else:
+                    tarifa = precio_base
+        
+        mensaje = "La tarifa total a pagar es de {0} pesos".format(tarifa)
+        alert(title= "Tarifas de viaje", message= mensaje)
+
             
     
 if __name__ == "__main__":
