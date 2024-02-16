@@ -50,28 +50,29 @@ class App(customtkinter.CTk):
         estacion = self.combobox_estaciones.get()
         destino = self.combobox_destino.get()
 
-        mensaje = "Se viaja"
+        mensaje_0 = "Se viaja"
         mensaje_1 = "No se viaja"
 
         match(estacion):
             case "Invierno":
                 if(destino == "Bariloche"):
-                    alert(title= "Viaje", message= mensaje)
+                    mensaje = mensaje_0
                 else:
-                    alert(title= "Viaje", message= mensaje_1)
+                    mensaje = mensaje_1
             case "Verano":
                 if(destino == "Mar del plata" or destino == "Cataratas"):
-                    alert(title= "Viaje", message= mensaje)
+                    mensaje = mensaje_0
                 else:
-                    alert(title= "Viaje", message= mensaje_1)
+                    mensaje = mensaje_1
             case "Otoño":
                 if(destino == "Bariloche" or destino == "Cataratas" or destino == "Mar del plata" or destino == "Cordoba"):
-                    alert(title= "Viaje", message= mensaje)
+                    mensaje = mensaje_0
             case "Primavera":
                 if(destino == "Cataratas" or destino == "Mar del plata" or destino == "Cordoba"):
-                    alert(title= "Viaje", message= mensaje)
+                    mensaje = mensaje_0
                 else:
-                    alert(title="Viaje", message= mensaje_1)
+                    mensaje = mensaje_1
+        alert("Viaje", mensaje)
 
             
     
