@@ -65,8 +65,9 @@ class App(customtkinter.CTk):
                 else:
                     mensaje = mensaje_1
             case "Otoño":
-                if(destino == "Bariloche" or destino == "Cataratas" or destino == "Mar del plata" or destino == "Cordoba"):
-                    mensaje = mensaje_0
+                match(destino):
+                    case _:
+                        mensaje = mensaje_0
             case "Primavera":
                 if(destino == "Cataratas" or destino == "Mar del plata" or destino == "Cordoba"):
                     mensaje = mensaje_0

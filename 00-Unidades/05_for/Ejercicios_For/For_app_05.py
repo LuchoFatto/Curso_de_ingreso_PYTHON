@@ -27,7 +27,19 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        repeticion = int(prompt("Ingreso", "Ingrese un número"))
+        contador = 0
+        numeros = ""
+
+        for i in range(1, repeticion + 1):
+            if i % 2 == 0:
+                numeros += "{0} ".format(i)
+                contador += 1
+        
+        mensaje = "{0}, cantidad de pares {1}".format(numeros, contador)
+        alert("Mostrar", mensaje)
+            
+
             
         
     

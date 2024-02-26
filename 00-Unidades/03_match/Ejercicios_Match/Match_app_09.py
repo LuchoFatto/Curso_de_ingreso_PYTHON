@@ -63,24 +63,27 @@ class App(customtkinter.CTk):
 
         match(estacion):
             case "Invierno":
-                if(destino == "Bariloche"):
-                    tarifa = precio_base * 1.20
-                elif(destino == "Cataratas" or destino == "Cordoba"):
-                    tarifa = precio_base * 0.9
-                else:
-                    tarifa = precio_base * 0.8
+                match(destino):
+                    case "Bariloche":
+                        tarifa = precio_base * 1.2
+                    case "Mar del plata":
+                        tarifa = precio_base * 0.8
+                    case _:
+                        tarifa = precio_base * 0.9
             case "Verano":
-                if(destino == "Bariloche"):
-                    tarifa = precio_base * 0.8
-                elif(destino == "Cataratas" or destino == "Cordoba"):
-                    tarifa = precio_base * 1.10
-                else:
-                    tarifa = precio_base * 1.20
+                match(destino):
+                    case "Bariloche":
+                        tarifa = precio_base * 0.8
+                    case "Mar del plata":
+                        tarifa = precio_base * 1.2
+                    case _:
+                        tarifa = precio_base * 1.1
             case "Primavera" | "Otoño":
-                if(destino == "Bariloche" or destino == "Cataratas" or destino == "Mar del plata"):
-                    tarifa = precio_base * 1.10
-                else:
-                    tarifa = precio_base
+                match(destino):
+                    case "Bariloche" | "Cataratas" | "Mar del plata":
+                        tarifa = precio_base * 1.1
+                    case _:
+                        tarifa = precio_base
         
         mensaje = "La tarifa total a pagar es de {0} pesos".format(tarifa)
         alert(title= "Tarifas de viaje", message= mensaje)
