@@ -44,10 +44,10 @@ class App(customtkinter.CTk):
             repeticiones += 1
             promedio = suma / 5
 
-            self.txt_suma_acumulada.delete(0, 100)
-            self.txt_suma_acumulada.insert(0, suma)
-            self.txt_promedio.delete(0, 100)
-            self.txt_promedio.insert(0, promedio)
+        self.txt_suma_acumulada.delete(0, 100)
+        self.txt_suma_acumulada.insert(0, suma)
+        self.txt_promedio.delete(0, 100)
+        self.txt_promedio.insert(0, promedio)
 
     
 if __name__ == "__main__":

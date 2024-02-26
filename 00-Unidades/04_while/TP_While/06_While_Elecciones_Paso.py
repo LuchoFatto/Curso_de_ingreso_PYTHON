@@ -86,14 +86,6 @@ class App(customtkinter.CTk):
         print(cant_y_votos_max, cant_y_votos_min, mensaje, mensaje_2)
         #f"\n {mensaje}"
 
-               
-            
-
-
-            
-
-
-
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

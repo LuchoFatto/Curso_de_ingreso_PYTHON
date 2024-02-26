@@ -60,8 +60,6 @@ class App(customtkinter.CTk):
     def btn_tiempo_llegada_on_click(self):
         kilometros = int(self.txt_kilometros.get())
         cantindad_de_horas = kilometros / 90
-        sexagecimal = cantindad_de_horas * 24
-        print(sexagecimal)
         mensaje = "El tiempo que tarda cada camion en recorrer {0} es de {1} horas".format(kilometros,cantindad_de_horas)
         alert(title= "Cantida de Horas",message= mensaje)
     

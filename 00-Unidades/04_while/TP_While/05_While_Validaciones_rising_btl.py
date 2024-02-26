@@ -62,7 +62,7 @@ class App(customtkinter.CTk):
             apellido = prompt("Ingreso", "Ingrese su apellido")
             edad = prompt("Ingreso", "Ingrese su edad")
             estado_civil = prompt("Ingreso", "Ingrese su estado civil")
-            n_legajo = prompt("Ingreso", "Ingrese numero de legajo")
+            n_legajo = prompt("Ingreso", "Ingrese numero de legajo sin ceros a la izquierda")
 
             if(apellido is None):
                 break
@@ -76,8 +76,6 @@ class App(customtkinter.CTk):
             while estado_civil != "Soltero/a" and estado_civil != "Casado/a" and estado_civil != "Divorciado/a" and estado_civil != "Viudo/a":
                 estado_civil = prompt("Ingreso", "Ingrese nuevamente su estado civil")
             
-            while n_legajo >= 1000:
-                n_legajo = int(prompt("Ingreso", "Ingrese numero de legajo sin ceros a la izquierda"))
 
         self.txt_apellido.delete(0, 100)
         self.txt_apellido.insert(0, apellido)

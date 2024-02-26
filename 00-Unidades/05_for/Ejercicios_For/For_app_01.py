@@ -28,8 +28,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        for i in range(5+1):
-            alert("Ascendente", i)
+        for i in range(5):
+            alert("Ascendente", i+1)
 
        
             

@@ -47,12 +47,11 @@ class App(customtkinter.CTk):
         while True:
             numero = prompt("Ingresar", "Ingrese un número")
             
-
             if(numero is None):
                 break
 
             numero = int(numero)
-            
+
             if(numero < 0):
                 suma_n += numero
                 contador_negativos += 1
